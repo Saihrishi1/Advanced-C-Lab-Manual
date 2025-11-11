@@ -16,12 +16,46 @@ Else
  
 Program:
 
-//type your code here
+```c
 
+#include <stdio.h>
+struct eligible 
+{
+  int age;
+  char n[25];
+};
+int main()
+{
+    int N;
+    printf("Enter the number of people : ");
+    scanf("%d",&N);
+    struct eligible e[N];
+    for(int i=0;i<N;i++)
+    {
+      printf("Enter Name and Age of the Person : ");
+      scanf("%s %d",e[i].n,&e[i].age);
+    }
+    printf("\n");
+    
+    for(int i=0;i<N;i++)
+    {
+      if(e[i].age <= 6)
+      {
+        printf("Vaccine Eligibility: No\n");
+      }
+      else
+      {
+        printf("Vaccine Eligibility: Yes\n");
+      }
+      printf("Name : %s\nAge : %d\n\n",e[i].n,e[i].age);
+    }
+}
+
+```
 
 Output:
 
-//paste your output here
+<img width="595" height="443" alt="image" src="https://github.com/user-attachments/assets/c0dd7f81-b18d-4070-92a1-07670a503225" />
 
 
 Result:
@@ -44,15 +78,33 @@ Algorithm:
  
 Program:
 
-//type your code here
+```c
 
+#include<stdio.h>
+struct number
+{
+  int a,b;
+};
+int add(struct number num)
+{
+  return num.a + num.b;
+}
+int main()
+{
+  struct number n;
+  printf("Enter Values for a and b : ");
+  scanf("%d %d",&n.a,&n.b);
+  int result = add(n);
+  printf("Sum of a and b = %d",result);
+  return 0;
+}
 
-
+```
 
 Output:
 
 
-//paste your output here
+<img width="440" height="208" alt="image" src="https://github.com/user-attachments/assets/773278ec-ad1d-4419-9d1b-eb1ab6d3ede9" />
 
 
 
@@ -68,7 +120,7 @@ Aim:
 To write a C program to read a file name from user
 
 Algorithm:
-1.	Include the necessary header file stdio.h.
+1.	Include the necessary header file <stdio.h
 2.	Begin the main function.
 3.	Declare a file pointer p.
 Declare a character array name to store the file name.
@@ -86,25 +138,36 @@ Use scanf to input the file name into the name array.
  
 Program:
 
-//type your code here
+```c
 
+#include<stdio.h>
+int main()
+{
+    char fname[25];
+    printf("Enter a name for the new text file : ");
+    scanf("%s",fname);
+    FILE *p;
+    p = fopen(fname,"w");
+    if(p == NULL);
+    {
+        printf("Error Creating File\n");
+        return 1;
+    }
+    printf("%s Successfully created\n",fname);
+    
+    fclose(p);
+    printf("%s Successfully closed\n",fname);
+    
+    return 0;
+    
+}
 
+```
 
 
 Output:
 
-
-//paste your output here
-
-
-
-
-
-
-
-
-
-
+<img width="547" height="250" alt="image" src="https://github.com/user-attachments/assets/8aea3e01-433e-4b09-bfea-263a4a6661ac" />
 
 Result:
 Thus, the program is verified successfully
